@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. Main Header &mdash; Sphinx Documentation</title>
+  <title>1. Compiling into HTML &mdash; Sphinx Documentation</title>
   
 
   
@@ -95,11 +95,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Example Page</span></p>
+<p class="caption" role="heading"><span class="caption-text">Compiling Instructions</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Main Header</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#next-level-header">1.1. Next Level Header</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#next-level">1.1.1. Next Level</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Compiling into HTML</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#python">1.1. Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compiling-rst-files-into-html">1.2. Compiling *.rst files into HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-the-webpage-link-in-github">1.3. Creating the webpage link in GitHub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#instructions">1.3.1. Instructions</a></li>
 </ul>
 </li>
 </ul>
@@ -149,13 +151,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li><span class="section-number">1. </span>Main Header</li>
+      <li><span class="section-number">1. </span>Compiling into HTML</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/example.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/compile.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -168,23 +170,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="main-header">
-<span id="example"></span><h1><span class="section-number">1. </span>Main Header<a class="headerlink" href="#main-header" title="Permalink to this heading">¶</a></h1>
-<p>Some text here.</p>
-<div class="section" id="next-level-header">
-<h2><span class="section-number">1.1. </span>Next Level Header<a class="headerlink" href="#next-level-header" title="Permalink to this heading">¶</a></h2>
-<p>Some more text.</p>
-<div class="section" id="next-level">
-<h3><span class="section-number">1.1.1. </span>Next Level<a class="headerlink" href="#next-level" title="Permalink to this heading">¶</a></h3>
-<p>Final text and an image:</p>
-<div class="figure align-center" id="id1">
-<span id="exampleimg"></span><img alt="Hello SCHISM model velocity results" src="_images/visit_velocity_vectors.png" />
-<p class="caption"><span class="caption-text"><em>An example of some velocity outputs of HelloSCHISM</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+  <div class="section" id="compiling-into-html">
+<h1><span class="section-number">1. </span>Compiling into HTML<a class="headerlink" href="#compiling-into-html" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="python">
+<span id="pystart"></span><h2><span class="section-number">1.1. </span>Python<a class="headerlink" href="#python" title="Permalink to this heading">¶</a></h2>
+<p>To compile the Sphinx *.rst files into an HTML web page you need to create a sphinx environment.</p>
+<p>If you are using anaconda/miniconda (recommended) navigate to this repository and enter the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda env create --name sphinx -f sphx_env.yaml</span>
+</pre></div>
 </div>
-<p>There you have it.</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="index.html#home"><span class="std std-ref">Home Page</span></a> Go back to the home page</p></li>
-</ul>
+<p>This creates a new environment called “sphinx” which contains the necessary packages to compile the webpage.</p>
+</div>
+<div class="section" id="compiling-rst-files-into-html">
+<span id="compiling"></span><h2><span class="section-number">1.2. </span>Compiling *.rst files into HTML<a class="headerlink" href="#compiling-rst-files-into-html" title="Permalink to this heading">¶</a></h2>
+<p>Once you have your environment created in conda, you can navigate to the <em>docsrc</em> folder, activate the sphinx environment and use the following command to create the index.html page:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make html</span>
+</pre></div>
+</div>
+<p>This will incorporate any changes you make in the *.rst files or in the conf.py file into the *.html files located in docs/html.</p>
+</div>
+<div class="section" id="creating-the-webpage-link-in-github">
+<span id="linkgit"></span><h2><span class="section-number">1.3. </span>Creating the webpage link in GitHub<a class="headerlink" href="#creating-the-webpage-link-in-github" title="Permalink to this heading">¶</a></h2>
+<p>Once you’ve created the html files necessary with “make html” and pushed those changes to GitHub, you can create a link within the repository page so that the website is easily accessible from the repository and also uses the index.html file to auto-populate that page.</p>
+<div class="section" id="instructions">
+<h3><span class="section-number">1.3.1. </span>Instructions<a class="headerlink" href="#instructions" title="Permalink to this heading">¶</a></h3>
+<p>1. Go to the repository settings
+* under Pages go to Branch
+* click None dropdown and select main/
+* click root dropdown and select docs/
+* click Save</p>
+<p>2. Use the website that’s generated to then add it to your repository’s “About” panel.
+* go to main repository page on GitHub
+* click the settings/gear icon next to “About”
+* copy your webpage url generated from Step 1 into the website field</p>
+<p>Now your repository will include a link to the webpage generated by GitHub from your *.html files.</p>
+<p>Go back to the <cite>Home Page &lt;home&gt;</cite>.</p>
 </div>
 </div>
 </div>

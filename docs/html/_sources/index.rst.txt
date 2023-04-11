@@ -5,55 +5,66 @@
 .. this next line is a tag to refer to a specific place in the \*.rst files
 .. _home:
 
-Main Page
+Getting Started
 ========================
 
-Headers are delineated in Sphinx by any successive character in this list = - ` . ; ' " ~ ^ > \ * + #
-You can choose whichever order of headers, but you need to be consistent accross all \*.rst files. For simplicity's sake, use the order listed above, where "=" is the highest level header, then "-" and so on.
+Here is some basic info needed to get started documenting in Sphinx.
 
+Headers
+------------------------
+
+Headers are delineated in Sphinx by any successive character in this list 
+
+= - ` . ; ' " ~ ^ > \ * + #
+
+Sub-Headers
+````````````````````````
+
+You can choose whichever order of headers, but you need to be consistent accross all \*.rst files. For simplicity's sake, use the order listed above, where "=" is the highest level header, then "-", then "`", and so on.
+
+Links
+-------------------------
 You can create links using `SCHISM <http://ccrm.vims.edu/schismweb/>`_ where "SCHISM" is the hyperlink display text.
 
-An example of a built-out project is in this `github repository`_.
+An example of a built-out project is in this `Hello SCHISM GitHub repository`_ or in this `Bay-Delta SCHISM GitHub repository`_.
 
-.. _github repository:  https://github.com/CADWRDeltaModeling/HelloSCHISM
+.. _Hello SCHISM GitHub repository:  https://github.com/CADWRDeltaModeling/HelloSCHISM
+.. _Bay-Delta SCHISM GitHub repository:  https://github.com/CADWRDeltaModeling/BayDeltaSCHISM
 
 To jump to a specific part of another \*.rst file you can use the following:
 
-*	:ref:`Example Page <example>`
+*	:ref:`Python Instructions <pystart>`
+*   :ref:`Compiling rst files to HTML <compiling>`
+*   :ref:`Linking webpage to GitHub repository <linkgit>`
 *	:ref:`Example Image <exampleimg>`
 
-.. _pystart:
+Figures
+--------------------------
+.. _exampleimg:
 
-Python
-------------------------
-To compile the Sphinx \*.rst files into an HTML web page you need to create a sphinx environment.
+.. figure:: /img/visit_velocity_vectors.png
+   :alt: Hello SCHISM model velocity results
+   :align: center
 
-If you are using anaconda/miniconda (recommended) navigate to this repository and enter the following command:
-
-.. code-block:: console
-
-   conda env create --name sphinx -f sphx_env.yaml
-
-This creates a new environment called “sphinx” which contains the necessary packages to compile the webpage.
-
+   *An example of some velocity outputs of HelloSCHISM*
+   
 Table of Contents
 --------------------------
-
 .. toctree::
-   :hidden:
-
+   :caption: Main Page
+   
    self
 
 .. toctree::
-   :maxdepth: 3
-   :caption: Example Page
+   :numbered:
+   :maxdepth: 2
+   :caption: Compiling Instructions
 
-   example
+   compile
    
    
 Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`

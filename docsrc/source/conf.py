@@ -93,7 +93,7 @@ exclude_patterns = []
 pygments_style = 'sphinx'
 
 # A list of ignored prefixes for module index sorting.
-#modindex_common_prefix = []
+modindex_common_prefix = []
 
 
 # -- Options for HTML output ---------------------------------------------------
@@ -102,7 +102,10 @@ pygments_style = 'sphinx'
 # a list of builtin themes.
 import sphinx_rtd_theme
 html_theme = 'sphinx_rtd_theme'
-html_sidebars = { '**': ['globaltoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html'] }
+html_sidebars = { '**': ['globaltoc.html', 'localtoc.html', 'navigation.html', 'relations.html', 'sourcelink.html', 'searchbox.html'] }
+html_theme_options = {'navigation_depth': 4,
+                      'collapse_navigation': False,
+                      }
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
