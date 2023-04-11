@@ -1,0 +1,1 @@
+The *docs/doctrees* folder is where Sphinx stores caches of the source \*.rst documents in \*.pickle and \*.doctree format.

@@ -1,0 +1,1 @@
+The *docs/html* folder is where Sphinx will build all the html files needed to produce the web page.

@@ -1,0 +1,1 @@
+The *docsrs/source/img* folder is where any supporting images will be hosted for the \*.rst fiels to reference.

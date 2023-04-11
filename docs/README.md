@@ -1,0 +1,1 @@
+The *docs* folder is where Sphinx will produce the *index.html* file (the main web page HTML file) and the supporting files in *html* and *doctrees*.

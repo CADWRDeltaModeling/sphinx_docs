@@ -1,0 +1,1 @@
+The *docsrc* folder is where you edit the input files and where the *make.bat* executable is stored.
